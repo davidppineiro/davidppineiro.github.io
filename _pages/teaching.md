@@ -2,11 +2,11 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: 
 nav: true
 nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+At NTNU, I was a teaching assistant for the master's level courses <a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">TEP4135 - Fluid Mechanics 2</a> in the fall of 2018 and <a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">TKP4140 - Process Control</a> during the falls of 2019, 2020, and 2021. 
 
-Organize your courses by years, topics, or universities, however you like!
+Besides teaching, I supervised master's theses on a variety of topics, including energy system modeling, optimization, and control. 
