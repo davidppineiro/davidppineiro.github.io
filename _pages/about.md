@@ -21,4 +21,4 @@ I am a PhD candidate in Chemical Engineering at NTNU, advised by Professor <a hr
 
 I am broadly interested in convex optimization and its applications to control, machine learning, and energy systems. 
 
-I hold a Bachelor's in Energy Engineering from the University of Vigo and a Master's in Sustainable Energy from NTNU. I have done research stays at MIT with Professor <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a> and at Stanford with Professor <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>. I am also a recepient of a postgraduate fellowship from “la Caixa” Foundation.
+I hold a Bachelor's in Energy Engineering from the University of Vigo and a Master's in Sustainable Energy from NTNU. I have done research stays at MIT with Professor <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a> and at Stanford with Professor <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>. I am also a recipient of a postgraduate fellowship from “la Caixa” Foundation.
