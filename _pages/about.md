@@ -7,7 +7,7 @@ subtitle:
 profile:
   align: right
   image: david.jpeg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   address: 
 
 news: true  # includes a list of news items
@@ -16,9 +16,9 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a research scientist at Gridmatic applying optimization and machine
-learning to energy trading, aiming to bring better predictability to the grid
-and accelerate the adoption of renewable energy.
+I am a research scientist at Gridmatic interested in questions of how
+optimization and machine learning can transform energy markets, make the grid
+more predictable, and accelerate the adoption of renewable energy.
 
 I hold a BS in Energy Engineering from the University of Vigo and an MS in
 Sustainable Energy from NTNU, where I am pursuing my PhD in Control Systems and
