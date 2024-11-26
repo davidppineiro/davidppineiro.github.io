@@ -16,9 +16,10 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a research scientist at Gridmatic interested in questions of how
-optimization and machine learning can transform energy markets, make the grid
-more predictable, and accelerate the adoption of renewable energy.
+I am a research scientist at <a href="https://www.gridmatic.com/">Gridmatic</a>
+interested in questions of how optimization and machine learning can transform
+energy markets, make the grid more predictable, and accelerate the adoption of
+renewable energy.
 
 I hold a BS in Energy Engineering from the University of Vigo and an MS in
 Sustainable Energy from NTNU, where I am pursuing my PhD in Control Systems and
