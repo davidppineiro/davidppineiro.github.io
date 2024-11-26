@@ -16,8 +16,15 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a PhD candidate in Chemical Engineering at NTNU, advised by Professor <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>. 
+I am a research scientist at Gridmatic applying optimization and machine
+learning to energy trading, aiming to bring better predictability to the grid
+and accelerate the adoption of renewable energy.
 
-I am broadly interested in convex optimization and its applications to control, machine learning, and energy systems. 
-
-I hold a Bachelor's in Energy Engineering from the University of Vigo and a Master's in Sustainable Energy from NTNU. I have done research stays at MIT with Professor <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a> and at Stanford with Professor <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>. I am also a recipient of a postgraduate fellowship from “la Caixa” Foundation.
+I hold a BS in Energy Engineering from the University of Vigo and an MS in
+Sustainable Energy from NTNU, where I am pursuing my PhD in Control Systems and
+Optimization under Professor <a href="https://folk.ntnu.no/skoge/">Sigurd
+Skogestad</a>. I have done research stays at MIT with Professor <a
+href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a> and at
+Stanford with Professor <a href="https://web.stanford.edu/~boyd/">Stephen
+Boyd</a>. I am also a recipient of a "la Caixa" Foundation postgraduate
+fellowship.
