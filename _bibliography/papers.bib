@@ -1,6 +1,30 @@
 ---
 ---
 
+@misc{algotune2025,
+  title={Can Language Models Speed Up General-Purpose Numerical Programs?},
+  author={Press, Ori and Amos, Brandon and Zhao, Haoyu and Wu, Yikai and Ainsworth, Samuel K. and Krupke, Dominik and Kidger, Patrick and Sajed, Touqir and Stellato, Bartolomeo and Park, Jisun and Bosch, Nathanael and Meril, Eli and Steppi, Albert and Zharmagambetov, Arman and Zhang, Fangzhao and P{\'e}rez-Pi{\~n}eiro, David and Mercurio, Alberto and Zhan, Ni and Abramovich, Talor and Lieret, Kilian and Zhang, Hanlin and Huang, Shirley and Bethge, Matthias and Press, Ofir},
+  year={2025},
+  bibtex_show={true},
+  pdf={https://algotune.io/paper.pdf},
+  abstract={Despite progress in language model (LM) capabilities, evaluations have thus far focused on models' performance on tasks that humans have previously solved, including in programming (Jimenez et al., 2024) and mathematics (Glazer et al., 2024). We therefore propose testing models' ability to design and implement algorithms in an open-ended benchmark: We task LMs with writing code that efficiently solves computationally challenging problems in computer science, physics, and mathematics. Our AlgoTune benchmark consists of 155 coding tasks collected from domain experts and a framework for validating and timing LM-synthesized solution code, which is compared to reference implementations from popular open-source packages. In addition, we develop a baseline LM agent, AlgoTuner, and evaluate its performance across a suite of frontier models. AlgoTuner achieves an average 1.76× speedup against our reference solvers, which use libraries such as SciPy, sk-learn and CVXPY. However, we find that current models fail to discover algorithmic innovations, instead preferring surface-level optimizations. We hope that AlgoTune catalyzes the development of LM agents exhibiting creative problem solving beyond state-of-the-art human performance.},
+  code={https://github.com/oripress/AlgoTune},
+  website={https://algotune.io/}
+}
+
+@misc{cvqp2025,
+  title={An Operator Splitting Method for Large-Scale {CVaR}-Constrained Quadratic Programs},
+  author={Luxenberg, Eric and P{\'e}rez-Pi{\~n}eiro, David and Diamond, Steven and Boyd, Stephen},
+  year={2025},
+  eprint={2504.10814},
+  archivePrefix={arXiv},
+  primaryClass={math.OC},
+  bibtex_show={true},
+  pdf={https://arxiv.org/pdf/2504.10814},
+  abstract={We introduce a fast and scalable method for solving quadratic programs with conditional value-at-risk (CVaR) constraints. While these problems can be formulated as standard quadratic programs, the number of variables and constraints grows linearly with the number of scenarios, making general-purpose solvers impractical for large-scale problems. Our method combines operator splitting with a specialized O(mlogm) algorithm for projecting onto CVaR constraints, where m is the number of scenarios. The method alternates between solving a linear system and performing parallel projections: onto CVaR constraints using our specialized algorithm and onto box constraints with a closed-form solution. Numerical examples from several application domains demonstrate that our method outperforms general-purpose solvers by several orders of magnitude on problems with up to millions of scenarios. Our method is implemented in an open-source package called CVQP.},
+  code={https://github.com/cvxgrp/cvqp}
+}
+
 @article{pineiro2023hem,
   title={Home energy management with dynamic tariffs and tiered peak power charges},
   author={P{\'e}rez-Pi{\~n}eiro, David and Skogestad, Sigurd and Boyd, Stephen},
