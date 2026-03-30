@@ -4,111 +4,158 @@
     <title>David Pérez Piñeiro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="description" content="David Pérez-Piñeiro — research scientist at Gridmatic.">
+    <meta name="description" content="David Pérez Piñeiro, research scientist at Gridmatic.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=Inter:wght@350;400;450&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 50px auto;
-            max-width: 680px;
-            line-height: 1.7;
+            margin: 60px auto;
+            max-width: 640px;
             font-size: 16px;
-            color: #333;
-            padding: 0 20px;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.75;
+            color: #2c2c2c;
+            padding: 0 24px;
+            font-family: 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+            font-weight: 370;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: #d4e4e9;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 40px;
         }
 
         .header img {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 32px;
-            font-weight: 400;
-            margin: 0 0 12px 0;
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 34px;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            color: #1a1a1a;
+            margin: 0 0 14px 0;
         }
 
         h2 {
-            font-size: 22px;
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 21px;
             font-weight: 400;
-            margin-top: 8px;
-            margin-bottom: 16px;
+            color: #1a1a1a;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
         }
 
         a {
-            color: #628D9B;
+            color: #3d6b7a;
             text-decoration: none;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #2a4d58;
         }
 
         .nav-links {
-            font-size: 15px;
-            margin-top: 16px;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            color: #888;
         }
 
         .nav-links a {
-            color: #555;
+            color: #777;
+            transition: color 0.15s;
         }
 
         .nav-links a:hover {
-            color: #628D9B;
+            color: #3d6b7a;
         }
 
         .bio {
-            margin-bottom: 12px;
+            margin-bottom: 0;
         }
 
-        hr {
+        .bio p {
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+
+        .divider {
             border: none;
-            border-top: 1px solid #ddd;
-            margin: 32px 0;
+            border-top: 1px solid #e0e0e0;
+            margin: 36px 0;
         }
 
         .paper {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .paper-title {
+            line-height: 1.45;
         }
 
         .paper-title a {
-            font-weight: 500;
+            font-weight: 430;
+            color: #2c2c2c;
         }
 
-        .paper-meta {
+        .paper-title a:hover {
+            color: #3d6b7a;
+        }
+
+        .paper-detail {
             font-size: 14px;
-            color: #555;
-            line-height: 1.5;
+            color: #666;
+            line-height: 1.55;
+            margin-top: 2px;
         }
 
-        .paper-meta i {
+        .paper-detail .authors {
             font-style: italic;
         }
 
+        .paper-detail a {
+            color: #888;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .paper-detail a:hover {
+            color: #3d6b7a;
+            border-bottom-color: #3d6b7a;
+        }
+
         .paper-links {
-            font-size: 14px;
+            display: inline;
         }
 
-        .paper-links a {
-            margin-right: 4px;
-        }
-
-        .teaching p {
-            margin-top: 0;
+        .paper-links span {
+            margin: 0 1px;
+            color: #ccc;
         }
 
         @media (max-width: 500px) {
+            body {
+                margin: 36px auto;
+            }
+
             .header img {
-                width: 130px;
-                height: 130px;
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 28px;
             }
         }
     </style>
@@ -130,92 +177,86 @@
 
 <div class="bio">
     <p>
-        I am a research scientist at <a href="https://www.gridmatic.com/">Gridmatic</a>
-        interested in how optimization and machine learning can transform
-        energy markets, make the grid more predictable, and accelerate the adoption of
-        renewable energy.
+        Research scientist at <a href="https://www.gridmatic.com/">Gridmatic</a>,
+        working on optimization and machine learning for energy markets.
     </p>
     <p>
-        I hold a BS in Energy Engineering from the University of Vigo and an MS in
-        Sustainable Energy from NTNU, where I am pursuing my PhD in Control Systems and
-        Optimization under Professor <a href="https://folk.ntnu.no/skoge/">Sigurd
-        Skogestad</a>. I have done research stays at MIT with Professor
-        <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a> and at
-        Stanford with Professor <a href="https://web.stanford.edu/~boyd/">Stephen
-        Boyd</a>. I am also a recipient of a "la Caixa" Foundation postgraduate
-        fellowship.
+        BS in Energy Engineering from the University of Vigo, MS in
+        Sustainable Energy from NTNU, where I am pursuing a PhD in
+        optimization and control under
+        <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>.
+        Previously visited
+        <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a>
+        at MIT and
+        <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>
+        at Stanford.
+        Recipient of a "la Caixa" Foundation fellowship.
     </p>
 </div>
 
-<hr>
+<hr class="divider">
 
 <h2>Papers</h2>
 
 <div class="paper">
     <div class="paper-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a></div>
-    <div class="paper-meta">
-        <i>O. Press, B. Amos, H. Zhao, Y. Wu, S. Ainsworth, D. Krupke, P. Kidger, T. Sajed, B. Stellato, J. Park, N. Bosch, E. Meril, A. Steppi, A. Zharmagambetov, F. Zhang, D. Pérez-Piñeiro, A. Mercurio, N. Zhan, T. Abramovich, K. Lieret, H. Zhang, S. Huang, M. Bethge, O. Press.</i> 2025.
-    </div>
-    <div class="paper-links">
-        [<a href="https://arxiv.org/pdf/2507.15887">pdf</a>]
-        [<a href="https://github.com/oripress/AlgoTune">code</a>]
-        [<a href="https://algotune.io/">website</a>]
+    <div class="paper-detail">
+        <span class="authors">O. Press, B. Amos, H. Zhao, Y. Wu, S. Ainsworth, D. Krupke, P. Kidger, T. Sajed, B. Stellato, J. Park, N. Bosch, E. Meril, A. Steppi, A. Zharmagambetov, F. Zhang, D. Pérez Piñeiro, A. Mercurio, N. Zhan, T. Abramovich, K. Lieret, H. Zhang, S. Huang, M. Bethge, O. Press.</span>
+        2025.
+        <span class="paper-links">
+            <a href="https://arxiv.org/pdf/2507.15887">pdf</a> <span>/</span>
+            <a href="https://github.com/oripress/AlgoTune">code</a> <span>/</span>
+            <a href="https://algotune.io/">website</a>
+        </span>
     </div>
 </div>
 
 <div class="paper">
     <div class="paper-title"><a href="https://arxiv.org/pdf/2504.10814">An operator splitting method for large-scale CVaR-constrained quadratic programs</a></div>
-    <div class="paper-meta">
-        <i>E. Luxenberg, D. Pérez-Piñeiro, S. Diamond, S. Boyd.</i> 2025.
-    </div>
-    <div class="paper-links">
-        [<a href="https://arxiv.org/pdf/2504.10814">pdf</a>]
-        [<a href="https://github.com/cvxgrp/cvqp">code</a>]
+    <div class="paper-detail">
+        <span class="authors">E. Luxenberg, D. Pérez Piñeiro, S. Diamond, S. Boyd.</span>
+        2025.
+        <span class="paper-links">
+            <a href="https://arxiv.org/pdf/2504.10814">pdf</a> <span>/</span>
+            <a href="https://github.com/cvxgrp/cvqp">code</a>
+        </span>
     </div>
 </div>
 
 <div class="paper">
     <div class="paper-title"><a href="https://arxiv.org/pdf/2307.07580.pdf">Home energy management with dynamic tariffs and tiered peak power charges</a></div>
-    <div class="paper-meta">
-        <i>D. Pérez-Piñeiro, S. Skogestad, S. Boyd.</i> 2023.
-    </div>
-    <div class="paper-links">
-        [<a href="https://arxiv.org/pdf/2307.07580.pdf">pdf</a>]
-        [<a href="https://github.com/cvxgrp/home-energy-management">code</a>]
+    <div class="paper-detail">
+        <span class="authors">D. Pérez Piñeiro, S. Skogestad, S. Boyd.</span>
+        2023.
+        <span class="paper-links">
+            <a href="https://arxiv.org/pdf/2307.07580.pdf">pdf</a> <span>/</span>
+            <a href="https://github.com/cvxgrp/home-energy-management">code</a>
+        </span>
     </div>
 </div>
 
 <div class="paper">
     <div class="paper-title"><a href="assets/pdf/control_tes.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a></div>
-    <div class="paper-meta">
-        <i>C. Zotică, D. Pérez-Piñeiro, S. Skogestad.</i> Computers &amp; Chemical Engineering, 2021.
+    <div class="paper-detail">
+        <span class="authors">C. Zotică, D. Pérez Piñeiro, S. Skogestad.</span>
+        Computers &amp; Chemical Engineering, 2021.
     </div>
 </div>
 
 <div class="paper">
     <div class="paper-title"><a href="assets/pdf/control_tes_escape2020.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a></div>
-    <div class="paper-meta">
-        <i>C. Zotică, D. Pérez-Piñeiro, S. Skogestad.</i> Computer Aided Chemical Engineering, 2020.
+    <div class="paper-detail">
+        <span class="authors">C. Zotică, D. Pérez Piñeiro, S. Skogestad.</span>
+        Computer Aided Chemical Engineering, 2020.
     </div>
 </div>
 
 <div class="paper">
     <div class="paper-title"><a href="assets/pdf/soc_pharma.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a></div>
-    <div class="paper-meta">
-        <i>D. Pérez-Piñeiro, A. Nikolakopoulou, J. Jäschke, R. D. Braatz.</i> IFAC-PapersOnLine, 2020.
+    <div class="paper-detail">
+        <span class="authors">D. Pérez Piñeiro, A. Nikolakopoulou, J. Jäschke, R. D. Braatz.</span>
+        IFAC-PapersOnLine, 2020.
     </div>
-</div>
-
-<hr>
-
-<h2>Teaching</h2>
-<div class="teaching">
-    <p>
-        At NTNU, I was a teaching assistant for
-        <a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">TEP4135 - Fluid Mechanics 2</a> (Fall 2018) and
-        <a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">TKP4140 - Process Control</a> (Fall 2019, 2020, 2021).
-        I also supervised master's theses on energy system modeling, optimization, and control.
-    </p>
 </div>
 
 </body>
