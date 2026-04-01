@@ -10,19 +10,74 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #fff;
+            --text: #333;
+            --heading: #111;
+            --link: #456;
+            --link-hover: #111;
+            --nav: #888;
+            --nav-muted: #999;
+            --detail: #777;
+            --detail-link: #888;
+            --detail-border: #ddd;
+            --divider: #e2e2e2;
+            --separator: #ccc;
+            --selection: #dde8eb;
+            --paper-title: #222;
+            --toggle-color: #999;
+        }
+
+        [data-theme="dark"] {
+            --bg: #1a1a1a;
+            --text: #c8c8c8;
+            --heading: #e0e0e0;
+            --link: #8ab4c8;
+            --link-hover: #e0e0e0;
+            --nav: #888;
+            --nav-muted: #777;
+            --detail: #999;
+            --detail-link: #999;
+            --detail-border: #555;
+            --divider: #333;
+            --separator: #555;
+            --selection: #2a3a40;
+            --paper-title: #d0d0d0;
+            --toggle-color: #777;
+        }
+
         body {
             margin: 60px auto;
             max-width: 640px;
             font-size: 17px;
             line-height: 1.8;
-            color: #333;
+            color: var(--text);
+            background: var(--bg);
             padding: 0 24px;
             font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
             -webkit-font-smoothing: antialiased;
         }
 
         ::selection {
-            background: #dde8eb;
+            background: var(--selection);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--toggle-color);
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.15s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--heading);
         }
 
         .header {
@@ -42,42 +97,42 @@
             font-size: 34px;
             font-weight: 400;
             letter-spacing: -0.01em;
-            color: #111;
+            color: var(--heading);
             margin: 0 0 12px 0;
         }
 
         h2 {
             font-size: 20px;
             font-weight: 400;
-            color: #111;
+            color: var(--heading);
             margin-top: 0;
             margin-bottom: 20px;
             letter-spacing: 0;
         }
 
         a {
-            color: #456;
+            color: var(--link);
             text-decoration: none;
         }
 
         a:hover {
-            color: #111;
+            color: var(--link-hover);
         }
 
         .nav-links {
             font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 14.5px;
             letter-spacing: 0.02em;
-            color: #999;
+            color: var(--nav-muted);
         }
 
         .nav-links a {
-            color: #888;
+            color: var(--nav);
             transition: color 0.15s;
         }
 
         .nav-links a:hover {
-            color: #111;
+            color: var(--link-hover);
         }
 
         .bio {
@@ -91,7 +146,7 @@
 
         .divider {
             border: none;
-            border-top: 1px solid #e2e2e2;
+            border-top: 1px solid var(--divider);
             margin: 28px 0;
         }
 
@@ -104,17 +159,17 @@
         }
 
         .paper-title a {
-            color: #222;
+            color: var(--paper-title);
         }
 
         .paper-title a:hover {
-            color: #456;
+            color: var(--link);
         }
 
         .paper-detail {
             font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 14px;
-            color: #777;
+            color: var(--detail);
             line-height: 1.55;
             margin-top: 2px;
         }
@@ -124,13 +179,13 @@
         }
 
         .paper-detail a {
-            color: #888;
-            border-bottom: 1px solid #ddd;
+            color: var(--detail-link);
+            border-bottom: 1px solid var(--detail-border);
         }
 
         .paper-detail a:hover {
-            color: #456;
-            border-bottom-color: #456;
+            color: var(--link);
+            border-bottom-color: var(--link);
         }
 
         .paper-links {
@@ -139,7 +194,7 @@
 
         .paper-links span {
             margin: 0 1px;
-            color: #ccc;
+            color: var(--separator);
         }
 
         @media (max-width: 500px) {
@@ -301,5 +356,21 @@
     <div class="paper-detail">La Voz de Galicia, 2017.</div>
 </div>
 
+<button class="theme-toggle" aria-label="Toggle dark mode">&#9789;</button>
+<script>
+    const toggle = document.querySelector('.theme-toggle');
+    const stored = localStorage.getItem('theme');
+    if (stored) {
+        document.documentElement.setAttribute('data-theme', stored);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    toggle.addEventListener('click', function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
+</script>
 </body>
 </html>
