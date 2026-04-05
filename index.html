@@ -20,10 +20,11 @@
             --detail: #6b7280;
             --detail-link: #6b7280;
             --detail-border: #d1d5db;
-            --section-border: #e5e5e0;
             --selection: #dbeafe;
+            --section-border: #e5e5e0;
             --paper-title: #1a1a1a;
             --toggle-color: #9ca3af;
+            --footer: #9ca3af;
         }
 
         [data-theme="dark"] {
@@ -36,15 +37,16 @@
             --detail: #8b8b8b;
             --detail-link: #8b8b8b;
             --detail-border: #404040;
-            --section-border: #2a2a2e;
             --selection: #1e3a52;
+            --section-border: #2a2a2e;
             --paper-title: #d5d5d5;
             --toggle-color: #555;
+            --footer: #555;
         }
 
         body {
             margin: 80px auto;
-            max-width: 620px;
+            max-width: 650px;
             font-size: 18px;
             line-height: 1.75;
             color: var(--text);
@@ -52,6 +54,7 @@
             padding: 0 28px;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             -webkit-font-smoothing: antialiased;
+            font-feature-settings: 'kern', 'liga';
         }
 
         ::selection {
@@ -65,11 +68,20 @@
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 16px;
-            color: var(--toggle-color);
             padding: 4px;
             line-height: 1;
             transition: color 0.2s;
+            color: var(--toggle-color);
+        }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .theme-toggle:hover {
@@ -87,6 +99,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         }
 
         h1 {
@@ -105,6 +118,12 @@
             letter-spacing: -0.01em;
         }
 
+        .section-rule {
+            border: none;
+            border-top: 1px solid var(--section-border);
+            margin: 48px 0 0 0;
+        }
+
         a {
             color: var(--link);
             text-decoration: none;
@@ -117,7 +136,7 @@
 
         .nav-links {
             font-size: 14px;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.05em;
             color: var(--nav);
         }
 
@@ -131,17 +150,12 @@
 
         .bio {
             margin-bottom: 0;
+            line-height: 1.65;
         }
 
         .bio p {
             margin-top: 0;
             margin-bottom: 16px;
-        }
-
-        .section-rule {
-            border: none;
-            border-top: 1px solid var(--section-border);
-            margin: 48px 0 0 0;
         }
 
         .paper {
@@ -154,10 +168,12 @@
 
         .paper-title a {
             color: var(--paper-title);
+            transition: color 0.15s;
         }
 
         .paper-title a:hover {
             color: var(--link);
+            text-decoration: underline;
         }
 
         .paper-detail {
@@ -213,6 +229,15 @@
             display: inline;
         }
 
+        .footer {
+            margin-top: 64px;
+            padding: 24px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--footer);
+            letter-spacing: 0.02em;
+        }
+
         @media (max-width: 500px) {
             body {
                 margin: 48px auto;
@@ -240,9 +265,9 @@
     <img src="photo.jpeg" alt="David Pérez Piñeiro">
     <h1>David Pérez Piñeiro</h1>
     <div class="nav-links">
-        <a href="mailto:davidppineiro@gmail.com">email</a> /
-        <a href="https://github.com/davidppineiro">github</a> /
-        <a href="https://scholar.google.com/citations?user=iI8Ju8IAAAAJ">scholar</a> /
+        <a href="mailto:davidppineiro@gmail.com">email</a> &middot;
+        <a href="https://github.com/davidppineiro">github</a> &middot;
+        <a href="https://scholar.google.com/citations?user=iI8Ju8IAAAAJ">scholar</a> &middot;
         <a href="https://www.linkedin.com/in/davidppineiro">linkedin</a>
     </div>
 </div>
@@ -267,7 +292,6 @@
 </div>
 
 <hr class="section-rule">
-
 <h2>Papers</h2>
 
 <div class="paper">
@@ -329,18 +353,16 @@
 </div>
 
 <hr class="section-rule">
-
 <h2>Software</h2>
 
 <div class="paper">
     <div class="paper-title"><a href="https://github.com/cvxgrp/cvqp">CVQP</a></div>
     <div class="paper-detail">
-        A fast solver for quadratic programs with CVaR constraints, scaling to millions of scenarios.
+        A fast and scalable solver for CVaR-constrained quadratic programs.
     </div>
 </div>
 
 <hr class="section-rule">
-
 <h2>Teaching</h2>
 
 <div class="paper">
@@ -354,7 +376,6 @@
 </div>
 
 <hr class="section-rule">
-
 <h2>Press</h2>
 
 <div class="paper">
@@ -377,15 +398,28 @@
     <div class="paper-detail">La Voz de Galicia, 2017.</div>
 </div>
 
-<button class="theme-toggle" aria-label="Toggle dark mode">&#9789;</button>
+<div class="footer">David Pérez Piñeiro</div>
+
+<button class="theme-toggle" aria-label="Toggle dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
 <script>
     const toggle = document.querySelector('.theme-toggle');
+    const moonIcon = toggle.querySelector('.icon-moon');
+    const sunIcon = toggle.querySelector('.icon-sun');
+    function updateToggleIcon() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        moonIcon.style.display = isDark ? 'none' : 'block';
+        sunIcon.style.display = isDark ? 'block' : 'none';
+    }
     const stored = localStorage.getItem('theme');
     if (stored) {
         document.documentElement.setAttribute('data-theme', stored);
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.setAttribute('data-theme', 'dark');
     }
+    updateToggleIcon();
     document.querySelectorAll('.et-al').forEach(function(el) {
         el.addEventListener('click', function() {
             this.closest('.authors').classList.toggle('expanded');
@@ -396,6 +430,7 @@
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        updateToggleIcon();
     });
 </script>
 </body>
