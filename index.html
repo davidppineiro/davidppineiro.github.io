@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="description" content="David Pérez Piñeiro, research scientist at Gridmatic.">
+    <meta property="og:title" content="David Pérez Piñeiro">
+    <meta property="og:description" content="David Pérez Piñeiro, research scientist at Gridmatic.">
+    <meta property="og:image" content="https://davidppineiro.com/photo.jpeg">
+    <meta property="og:url" content="https://davidppineiro.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #faf9f7;
@@ -22,7 +28,7 @@
             --detail-border: #d1d5db;
             --selection: #dbeafe;
             --section-border: #e5e5e0;
-            --paper-title: #1a1a1a;
+            --entry-title: #1a1a1a;
             --toggle-color: #9ca3af;
             --footer: #9ca3af;
         }
@@ -39,7 +45,7 @@
             --detail-border: #404040;
             --selection: #1e3a52;
             --section-border: #2a2a2e;
-            --paper-title: #d5d5d5;
+            --entry-title: #d5d5d5;
             --toggle-color: #555;
             --footer: #555;
         }
@@ -103,16 +109,18 @@
         }
 
         h1 {
+            font-family: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
             font-size: 36px;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: -0.02em;
             color: var(--heading);
             margin: 0 0 12px 0;
         }
 
         h2 {
+            font-family: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
             font-size: 22px;
-            font-weight: 400;
+            font-weight: 500;
             color: var(--heading);
             margin: 48px 0 20px 0;
             letter-spacing: -0.01em;
@@ -158,50 +166,50 @@
             margin-bottom: 16px;
         }
 
-        .paper {
+        .entry {
             margin-bottom: 22px;
         }
 
-        .paper-title {
+        .entry-title {
             line-height: 1.5;
         }
 
-        .paper-title a {
-            color: var(--paper-title);
+        .entry-title a {
+            color: var(--entry-title);
             transition: color 0.15s;
         }
 
-        .paper-title a:hover {
+        .entry-title a:hover {
             color: var(--link);
             text-decoration: underline;
         }
 
-        .paper-detail {
+        .entry-detail {
             font-size: 14px;
             color: var(--detail);
             line-height: 1.6;
             margin-top: 2px;
         }
 
-        .paper-detail .authors {
+        .entry-detail .authors {
             font-style: italic;
         }
 
-        .paper-detail a {
+        .entry-detail a {
             color: var(--detail-link);
             border-bottom: 1px solid var(--detail-border);
         }
 
-        .paper-detail a:hover {
+        .entry-detail a:hover {
             color: var(--link);
             border-bottom-color: var(--link);
         }
 
-        .paper-links {
+        .entry-links {
             display: inline;
         }
 
-        .paper-links span {
+        .entry-links span {
             margin: 0 2px;
             color: var(--detail-border);
         }
@@ -209,7 +217,11 @@
         .et-al {
             cursor: pointer;
             color: var(--detail-link);
+            background: none;
+            border: none;
             border-bottom: 1px solid var(--detail-border);
+            padding: 0;
+            font: inherit;
         }
 
         .et-al:hover {
@@ -258,6 +270,16 @@
             }
         }
     </style>
+    <script>
+        (function() {
+            const stored = localStorage.getItem('theme');
+            if (stored) {
+                document.documentElement.setAttribute('data-theme', stored);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
 
@@ -281,71 +303,73 @@
         I am interested in convex optimization and its applications
         to control, energy, and finance. I received my BS in Energy Engineering
         from the University of Vigo and my MS in Sustainable Energy from NTNU,
-        supported by a "la Caixa" Foundation fellowship, and did research stays with
+        supported by a <a href="https://lacaixafoundation.org/en/postgraduate-fellowships-abroad">"la Caixa" Foundation postgraduate fellowship</a>.
+        I am completing my PhD at NTNU, advised by
+        <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>,
+        and was a visiting researcher with
         <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a>
         at MIT and
         <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>
-        at Stanford. I am completing my PhD at NTNU, advised by
-        <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>.
+        at Stanford.
     </p>
 </div>
 
 <hr class="section-rule">
 <h2>Papers</h2>
 
-<div class="paper">
-    <div class="paper-title"><a href="https://arxiv.org/pdf/2504.10814">An operator splitting method for large-scale CVaR-constrained quadratic programs</a></div>
-    <div class="paper-detail">
+<div class="entry">
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2504.10814">An operator splitting method for large-scale CVaR-constrained quadratic programs</a></div>
+    <div class="entry-detail">
         <span class="authors">E. Luxenberg, D. Pérez-Piñeiro, S. Diamond, S. Boyd.</span>
-        To appear in Optimization and Engineering, 2026.
-        <span class="paper-links">
+        Optimization and Engineering, 2026.
+        <span class="entry-links">
             <a href="https://github.com/cvxgrp/cvqp">code</a>
         </span>
     </div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a></div>
-    <div class="paper-detail">
-        <span class="authors">O. Press, B. Amos, H. Zhao, <span class="et-al">et al.</span><span class="authors-full">Y. Wu, S. Ainsworth, D. Krupke, P. Kidger, T. Sajed, B. Stellato, J. Park, N. Bosch, E. Meril, A. Steppi, A. Zharmagambetov, F. Zhang, D. Pérez-Piñeiro, A. Mercurio, N. Zhan, T. Abramovich, K. Lieret, H. Zhang, S. Huang, M. Bethge, O. Press.</span></span>
+<div class="entry">
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a></div>
+    <div class="entry-detail">
+        <span class="authors">O. Press, B. Amos, H. Zhao, <button class="et-al">et al.</button><span class="authors-full">Y. Wu, S. Ainsworth, D. Krupke, P. Kidger, T. Sajed, B. Stellato, J. Park, N. Bosch, E. Meril, A. Steppi, A. Zharmagambetov, F. Zhang, D. Pérez-Piñeiro, A. Mercurio, N. Zhan, T. Abramovich, K. Lieret, H. Zhang, S. Huang, M. Bethge, O. Press.</span></span>
         NeurIPS, 2025.
-        <span class="paper-links">
+        <span class="entry-links">
             <a href="https://github.com/oripress/AlgoTune">code</a> <span>/</span>
             <a href="https://algotune.io/">website</a>
         </span>
     </div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="https://arxiv.org/pdf/2307.07580">Home energy management under tiered peak power charges</a></div>
-    <div class="paper-detail">
+<div class="entry">
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2307.07580">Home energy management under tiered peak power charges</a></div>
+    <div class="entry-detail">
         <span class="authors">D. Pérez-Piñeiro, S. Skogestad, S. Boyd.</span>
         2023.
-        <span class="paper-links">
+        <span class="entry-links">
             <a href="https://github.com/cvxgrp/home-energy-management">code</a>
         </span>
     </div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/district_heating_control.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a></div>
-    <div class="paper-detail">
+<div class="entry">
+    <div class="entry-title"><a href="pdf/district_heating_control.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a></div>
+    <div class="entry-detail">
         <span class="authors">C. Zotică, D. Pérez-Piñeiro, S. Skogestad.</span>
         Computers &amp; Chemical Engineering, 2021.
     </div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/thermal_storage_control.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a></div>
-    <div class="paper-detail">
+<div class="entry">
+    <div class="entry-title"><a href="pdf/thermal_storage_control.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a></div>
+    <div class="entry-detail">
         <span class="authors">C. Zotică, D. Pérez-Piñeiro, S. Skogestad.</span>
         ESCAPE, 2020.
     </div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/pharma_self_optimizing.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a></div>
-    <div class="paper-detail">
+<div class="entry">
+    <div class="entry-title"><a href="pdf/pharma_self_optimizing.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a></div>
+    <div class="entry-detail">
         <span class="authors">D. Pérez-Piñeiro, A. Nikolakopoulou, J. Jäschke, R. D. Braatz.</span>
         IFAC World Congress, 2020.
     </div>
@@ -354,9 +378,9 @@
 <hr class="section-rule">
 <h2>Software</h2>
 
-<div class="paper">
-    <div class="paper-title"><a href="https://github.com/cvxgrp/cvqp">CVQP</a></div>
-    <div class="paper-detail">
+<div class="entry">
+    <div class="entry-title"><a href="https://github.com/cvxgrp/cvqp">CVQP</a></div>
+    <div class="entry-detail">
         A fast and scalable solver for CVaR-constrained quadratic programs.
     </div>
 </div>
@@ -364,37 +388,37 @@
 <hr class="section-rule">
 <h2>Teaching</h2>
 
-<div class="paper">
-    <div class="paper-title"><a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">TKP4140 - Process Control</a></div>
-    <div class="paper-detail">Teaching assistant, NTNU. Fall 2019, 2020, 2021.</div>
+<div class="entry">
+    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">TKP4140 - Process Control</a></div>
+    <div class="entry-detail">Teaching assistant, NTNU. Fall 2019, 2020, 2021.</div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">TEP4135 - Fluid Mechanics 2</a></div>
-    <div class="paper-detail">Teaching assistant, NTNU. Fall 2018.</div>
+<div class="entry">
+    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">TEP4135 - Fluid Mechanics 2</a></div>
+    <div class="entry-detail">Teaching assistant, NTNU. Fall 2018.</div>
 </div>
 
 <hr class="section-rule">
 <h2>Press</h2>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/2024-04-14_faro_de_vigo.pdf">Gallegos a la Vanguardia: de Lugo a Silicon Valley</a></div>
-    <div class="paper-detail">Faro de Vigo, 2024.</div>
+<div class="entry">
+    <div class="entry-title"><a href="pdf/2024-04-14_faro_de_vigo.pdf">Gallegos a la Vanguardia: de Lugo a Silicon Valley</a></div>
+    <div class="entry-detail">Faro de Vigo, 2024.</div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/2023-07-10_la_voz_de_galicia.pdf">Stanford, algoritmos y un garaje lleno de robots</a></div>
-    <div class="paper-detail">La Voz de Galicia, 2023.</div>
+<div class="entry">
+    <div class="entry-title"><a href="pdf/2023-07-10_la_voz_de_galicia.pdf">Stanford, algoritmos y un garaje lleno de robots</a></div>
+    <div class="entry-detail">La Voz de Galicia, 2023.</div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/2019-05-26_la_voz_de_galicia.pdf">Un semestre en el MIT entre ecuaciones y fármacos</a></div>
-    <div class="paper-detail">La Voz de Galicia, 2019.</div>
+<div class="entry">
+    <div class="entry-title"><a href="pdf/2019-05-26_la_voz_de_galicia.pdf">Un semestre en el MIT: plantas farmacéuticas que se operan solas</a></div>
+    <div class="entry-detail">La Voz de Galicia, 2019.</div>
 </div>
 
-<div class="paper">
-    <div class="paper-title"><a href="pdf/2017-05-21_la_voz_de_galicia.pdf">De vuelta a Noruega con una beca "la Caixa"</a></div>
-    <div class="paper-detail">La Voz de Galicia, 2017.</div>
+<div class="entry">
+    <div class="entry-title"><a href="pdf/2017-05-21_la_voz_de_galicia.pdf">Una beca "la Caixa" para estudiar un máster en Noruega</a></div>
+    <div class="entry-detail">La Voz de Galicia, 2017.</div>
 </div>
 
 <div class="footer">© David Pérez Piñeiro</div>
@@ -411,12 +435,6 @@
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         moonIcon.style.display = isDark ? 'none' : 'block';
         sunIcon.style.display = isDark ? 'block' : 'none';
-    }
-    const stored = localStorage.getItem('theme');
-    if (stored) {
-        document.documentElement.setAttribute('data-theme', stored);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
     }
     updateToggleIcon();
     document.querySelectorAll('.et-al').forEach(function(el) {
