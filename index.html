@@ -20,15 +20,14 @@
             --bg: #faf9f7;
             --text: #374151;
             --heading: #1a1a1a;
-            --link: #2563a8;
-            --link-hover: #1a4a85;
+            --link: #224b8d;
+            --link-hover: #15336b;
             --nav: #6b7280;
             --detail: #6b7280;
             --detail-link: #6b7280;
             --detail-border: #d1d5db;
             --selection: #dbeafe;
             --section-border: #e5e5e0;
-            --entry-title: #1a1a1a;
             --toggle-color: #9ca3af;
             --footer: #9ca3af;
         }
@@ -45,14 +44,13 @@
             --detail-border: #404040;
             --selection: #1e3a52;
             --section-border: #2a2a2e;
-            --entry-title: #d5d5d5;
             --toggle-color: #555;
             --footer: #555;
         }
 
         body {
             margin: 80px auto;
-            max-width: 650px;
+            max-width: 780px;
             font-size: 18px;
             line-height: 1.75;
             color: var(--text);
@@ -140,10 +138,11 @@
 
         a:hover {
             color: var(--link-hover);
+            text-decoration: underline;
         }
 
         .nav-links {
-            font-size: 14px;
+            font-size: 15px;
             letter-spacing: 0.05em;
             color: var(--nav);
         }
@@ -174,25 +173,11 @@
             line-height: 1.5;
         }
 
-        .entry-title a {
-            color: var(--entry-title);
-            transition: color 0.15s;
-        }
-
-        .entry-title a:hover {
-            color: var(--link);
-            text-decoration: underline;
-        }
-
         .entry-detail {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--detail);
             line-height: 1.6;
             margin-top: 2px;
-        }
-
-        .entry-detail .authors {
-            font-style: italic;
         }
 
         .entry-detail a {
@@ -207,11 +192,6 @@
 
         .entry-links {
             display: inline;
-        }
-
-        .entry-links span {
-            margin: 0 2px;
-            color: var(--detail-border);
         }
 
         .et-al {
@@ -318,36 +298,26 @@
 <h2>Papers</h2>
 
 <div class="entry">
-    <div class="entry-title"><a href="https://arxiv.org/pdf/2504.10814">An operator splitting method for large-scale CVaR-constrained quadratic programs</a></div>
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2504.10814">An operator splitting method for large-scale CVaR-constrained quadratic programs</a> <span class="entry-links">(<a href="https://github.com/cvxgrp/cvqp">code</a>)</span></div>
     <div class="entry-detail">
         <span class="authors">E. Luxenberg, D. Pérez-Piñeiro, S. Diamond, S. Boyd.</span>
-        Optimization and Engineering, 2026.
-        <span class="entry-links">
-            <a href="https://github.com/cvxgrp/cvqp">code</a>
-        </span>
+        <em>Optimization and Engineering</em>, 2026.
     </div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a></div>
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a> <span class="entry-links">(<a href="https://github.com/oripress/AlgoTune">code</a>, <a href="https://algotune.io/">website</a>)</span></div>
     <div class="entry-detail">
         <span class="authors">O. Press, B. Amos, H. Zhao, <button class="et-al">et al.</button><span class="authors-full">Y. Wu, S. Ainsworth, D. Krupke, P. Kidger, T. Sajed, B. Stellato, J. Park, N. Bosch, E. Meril, A. Steppi, A. Zharmagambetov, F. Zhang, D. Pérez-Piñeiro, A. Mercurio, N. Zhan, T. Abramovich, K. Lieret, H. Zhang, S. Huang, M. Bethge, O. Press.</span></span>
-        NeurIPS, 2025.
-        <span class="entry-links">
-            <a href="https://github.com/oripress/AlgoTune">code</a> <span>/</span>
-            <a href="https://algotune.io/">website</a>
-        </span>
+        <em>NeurIPS</em>, 2025.
     </div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="https://arxiv.org/pdf/2307.07580">Home energy management under tiered peak power charges</a></div>
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2307.07580">Home battery dispatch under a tiered peak power tariff</a> <span class="entry-links">(<a href="https://github.com/cvxgrp/home-energy-management">code</a>)</span></div>
     <div class="entry-detail">
         <span class="authors">D. Pérez-Piñeiro, S. Skogestad, S. Boyd.</span>
-        2023.
-        <span class="entry-links">
-            <a href="https://github.com/cvxgrp/home-energy-management">code</a>
-        </span>
+        <em>Preprint</em>, 2023.
     </div>
 </div>
 
@@ -355,7 +325,7 @@
     <div class="entry-title"><a href="pdf/district_heating_control.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a></div>
     <div class="entry-detail">
         <span class="authors">C. Zotică, D. Pérez-Piñeiro, S. Skogestad.</span>
-        Computers &amp; Chemical Engineering, 2021.
+        <em>Computers &amp; Chemical Engineering</em>, 2021.
     </div>
 </div>
 
@@ -363,7 +333,7 @@
     <div class="entry-title"><a href="pdf/thermal_storage_control.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a></div>
     <div class="entry-detail">
         <span class="authors">C. Zotică, D. Pérez-Piñeiro, S. Skogestad.</span>
-        ESCAPE, 2020.
+        <em>ESCAPE</em>, 2020.
     </div>
 </div>
 
@@ -371,7 +341,7 @@
     <div class="entry-title"><a href="pdf/pharma_self_optimizing.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a></div>
     <div class="entry-detail">
         <span class="authors">D. Pérez-Piñeiro, A. Nikolakopoulou, J. Jäschke, R. D. Braatz.</span>
-        IFAC World Congress, 2020.
+        <em>IFAC World Congress</em>, 2020.
     </div>
 </div>
 
