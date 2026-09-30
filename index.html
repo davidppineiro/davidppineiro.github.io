@@ -14,255 +14,145 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #faf9f7;
-            --text: #374151;
-            --heading: #1a1a1a;
-            --link: #224b8d;
-            --link-hover: #15336b;
-            --nav: #6b7280;
-            --detail: #6b7280;
-            --detail-link: #6b7280;
-            --detail-border: #d1d5db;
-            --selection: #dbeafe;
-            --section-border: #e5e5e0;
-            --toggle-color: #9ca3af;
-            --footer: #9ca3af;
+            --ink: #1b1c1e;
+            --ink-soft: #4a4d52;
+            --ink-faint: #7c8188;
+            --rule: #e3e5e8;
+            --accent: #2f5db3;
         }
 
-        [data-theme="dark"] {
-            --bg: #1a1a1e;
-            --text: #c5c5c5;
-            --heading: #e5e5e5;
-            --link: #8faad4;
-            --link-hover: #b0c3de;
-            --nav: #8b8b8b;
-            --detail: #8b8b8b;
-            --detail-link: #8b8b8b;
-            --detail-border: #404040;
-            --selection: #1e3a52;
-            --section-border: #2a2a2e;
-            --toggle-color: #555;
-            --footer: #555;
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            margin: 80px auto;
-            max-width: 690px;
-            font-size: 18px;
-            line-height: 1.75;
-            color: var(--text);
-            background: var(--bg);
-            padding: 0 28px;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0 auto;
+            max-width: calc(44rem + 3rem);
+            padding: 3.5rem 1.5rem 4rem;
+            background: #fff;
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
-            font-feature-settings: 'kern', 'liga';
         }
 
-        ::selection {
-            background: var(--selection);
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 24px;
-            right: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            line-height: 1;
-            transition: color 0.2s;
-            color: var(--toggle-color);
-        }
-
-        .theme-toggle svg {
-            width: 18px;
-            height: 18px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .theme-toggle:hover {
-            color: var(--heading);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .header img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        h1, h2 {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            color: var(--ink);
         }
 
         h1 {
-            font-family: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
-            font-size: 36px;
-            font-weight: 400;
+            font-size: 2rem;
             letter-spacing: -0.02em;
-            color: var(--heading);
-            margin: 0 0 12px 0;
+            line-height: 1.2;
+            margin: 0 0 1.75rem;
         }
 
         h2 {
-            font-family: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
-            font-size: 22px;
-            font-weight: 500;
-            color: var(--heading);
-            margin: 48px 0 20px 0;
+            font-size: 1.3rem;
             letter-spacing: -0.01em;
-        }
-
-        .section-rule {
-            border: none;
-            border-top: 1px solid var(--section-border);
-            margin: 48px 0 0 0;
+            line-height: 1.25;
+            margin: 3rem 0 1.1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--rule);
         }
 
         a {
-            color: var(--link);
+            color: var(--accent);
             text-decoration: none;
-            transition: color 0.15s;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s ease, color 0.15s ease;
         }
 
         a:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
+            color: var(--ink);
+            border-bottom-color: currentColor;
         }
 
-        .nav-links {
-            font-size: 15px;
-            letter-spacing: 0.05em;
-            color: var(--nav);
+        p {
+            margin: 0 0 1.1rem;
         }
 
-        .nav-links a {
-            color: var(--nav);
+        .intro {
+            display: flex;
+            gap: 1.75rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
 
-        .nav-links a:hover {
-            color: var(--link);
+        .intro img {
+            width: 170px;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            flex-shrink: 0;
         }
 
-        .bio {
-            margin-bottom: 0;
-            line-height: 1.65;
-        }
-
-        .bio p {
-            margin-top: 0;
-            margin-bottom: 16px;
+        .contact {
+            color: var(--ink-soft);
+            line-height: 1.9;
         }
 
         .entry {
-            margin-bottom: 22px;
+            margin-bottom: 1rem;
         }
 
         .entry-title {
-            line-height: 1.5;
+            line-height: 1.45;
+            margin-bottom: 0.1rem;
         }
 
         .entry-detail {
-            font-size: 16px;
-            color: var(--detail);
-            line-height: 1.6;
-            margin-top: 2px;
+            font-size: 0.93rem;
+            color: var(--ink-faint);
         }
 
-        .entry-links {
-            display: inline;
-        }
-
-        .et-al {
-            cursor: pointer;
-            color: var(--detail-link);
-            background: none;
-            border: none;
-            border-bottom: 1px solid var(--detail-border);
-            padding: 0;
-            font: inherit;
-        }
-
-        .et-al:hover {
-            color: var(--link);
-            border-bottom-color: var(--link);
-        }
-
-        .authors-full {
-            display: none;
-        }
-
-        .authors.expanded .et-al {
-            display: none;
-        }
-
-        .authors.expanded .authors-full {
-            display: inline;
-        }
-
-        .footer {
-            margin-top: 64px;
-            padding: 24px 0;
-            text-align: center;
-            font-size: 13px;
-            color: var(--footer);
-            letter-spacing: 0.02em;
-        }
-
-        @media (max-width: 500px) {
+        @media (max-width: 700px) {
             body {
-                margin: 48px auto;
-                padding: 0 20px;
-            }
-
-            .header img {
-                width: 140px;
-                height: 140px;
+                font-size: 16px;
+                padding: 2.25rem 1.25rem 3rem;
             }
 
             h1 {
-                font-size: 28px;
+                font-size: 1.65rem;
             }
 
             h2 {
-                font-size: 20px;
+                font-size: 1.2rem;
+                margin-top: 2.25rem;
+            }
+
+            .intro {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .intro img {
+                width: 150px;
             }
         }
     </style>
-    <script>
-        (function() {
-            const stored = localStorage.getItem('theme');
-            if (stored) {
-                document.documentElement.setAttribute('data-theme', stored);
-            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
 </head>
 <body>
 
-<div class="header">
+<h1>David Pérez Piñeiro</h1>
+
+<div class="intro">
     <img src="photo.jpeg" alt="David Pérez Piñeiro">
-    <h1>David Pérez Piñeiro</h1>
-    <div class="nav-links">
-        <a href="mailto:davidppineiro@gmail.com">email</a> &middot;
-        <a href="https://github.com/davidppineiro">github</a> &middot;
-        <a href="https://scholar.google.com/citations?user=iI8Ju8IAAAAJ">scholar</a> &middot;
-        <a href="https://www.linkedin.com/in/davidppineiro">linkedin</a>
+    <div class="contact">
+        <a href="mailto:davidppineiro@gmail.com">davidppineiro@gmail.com</a><br>
+        <a href="https://github.com/davidppineiro">GitHub</a> /
+        <a href="https://scholar.google.com/citations?user=iI8Ju8IAAAAJ">Scholar</a> /
+        <a href="https://www.linkedin.com/in/davidppineiro">LinkedIn</a>
     </div>
 </div>
+
+<h2>About me</h2>
 
 <div class="bio">
     <p>
@@ -270,146 +160,87 @@
         where I build optimization models and algorithms for quantitative energy trading.
     </p>
     <p>
-        I am interested in convex optimization and its applications
+        I am interested in optimization and its applications
         to control, energy, and finance. I am completing my PhD at NTNU, advised by
         <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>,
         and have been a visiting researcher with
         <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a>
         at MIT and
         <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>
-        at Stanford. Before that, I earned a BS in Energy Engineering
-        from the University of Vigo and an MS in Sustainable Energy from NTNU,
-        supported by a "la Caixa" Foundation postgraduate fellowship.
+        at Stanford.
+    </p>
+    <p>
+        I received a BS in Energy Engineering from the University of Vigo
+        and an MS in Sustainable Energy from NTNU,
+        supported by a “la Caixa” Foundation postgraduate fellowship.
     </p>
 </div>
 
-<hr class="section-rule">
 <h2>Papers</h2>
 
 <div class="entry">
-    <div class="entry-title"><a href="pdf/cvqp.pdf">An operator splitting method for large-scale CVaR-constrained quadratic programs</a> <span class="entry-links">[<a href="https://github.com/cvxgrp/cvqp">code</a>]</span></div>
-    <div class="entry-detail"><span class="authors">E. Luxenberg, D. Pérez-Piñeiro, S. Diamond, S. Boyd</span></div>
-    <div class="entry-detail"><em>Optimization and Engineering</em>, 2026</div>
+    <div class="entry-title"><a href="pdf/cvqp.pdf">An operator splitting method for large-scale CVaR-constrained quadratic programs</a> <span class="entry-links">(<a href="https://github.com/cvxgrp/cvqp">code</a>)</span></div>
+    <div class="entry-detail"><span class="authors">E.&nbsp;Luxenberg, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Diamond, S.&nbsp;Boyd</span>. <em>Optimization and Engineering</em>, 2026</div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="pdf/home_battery_dispatch.pdf">Home battery dispatch under a tiered peak power tariff</a> <span class="entry-links">[<a href="https://github.com/cvxgrp/home-energy-management">code</a>]</span></div>
-    <div class="entry-detail"><span class="authors">D. Pérez-Piñeiro, S. Skogestad, S. Boyd</span></div>
-    <div class="entry-detail"><em>Optimization and Engineering</em>, 2026</div>
+    <div class="entry-title"><a href="pdf/home_battery_dispatch.pdf">Home battery dispatch under a tiered peak power tariff</a> <span class="entry-links">(<a href="https://github.com/cvxgrp/home-energy-management">code</a>)</span></div>
+    <div class="entry-detail"><span class="authors">D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad, S.&nbsp;Boyd</span>. <em>Optimization and Engineering</em>, 2026</div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a> <span class="entry-links">[<a href="https://github.com/oripress/AlgoTune">code</a>] [<a href="https://algotune.io/">website</a>]</span></div>
-    <div class="entry-detail"><span class="authors">O. Press, B. Amos, H. Zhao, <button class="et-al">et al.</button><span class="authors-full">Y. Wu, S. Ainsworth, D. Krupke, P. Kidger, T. Sajed, B. Stellato, J. Park, N. Bosch, E. Meril, A. Steppi, A. Zharmagambetov, F. Zhang, D. Pérez-Piñeiro, A. Mercurio, N. Zhan, T. Abramovich, K. Lieret, H. Zhang, S. Huang, M. Bethge, O. Press</span></span></div>
-    <div class="entry-detail"><em>NeurIPS</em>, 2025</div>
+    <div class="entry-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a> <span class="entry-links">(<a href="https://github.com/oripress/AlgoTune">code</a>, <a href="https://algotune.io/">website</a>)</span></div>
+    <div class="entry-detail"><span class="authors">O.&nbsp;Press, B.&nbsp;Amos, H.&nbsp;Zhao, Y.&nbsp;Wu, S.&nbsp;Ainsworth, D.&nbsp;Krupke, P.&nbsp;Kidger, T.&nbsp;Sajed, B.&nbsp;Stellato, J.&nbsp;Park, N.&nbsp;Bosch, E.&nbsp;Meril, A.&nbsp;Steppi, A.&nbsp;Zharmagambetov, F.&nbsp;Zhang, D.&nbsp;Pérez-Piñeiro, A.&nbsp;Mercurio, N.&nbsp;Zhan, T.&nbsp;Abramovich, K.&nbsp;Lieret, H.&nbsp;Zhang, S.&nbsp;Huang, M.&nbsp;Bethge, O.&nbsp;Press</span>. <em>NeurIPS</em>, 2025</div>
 </div>
 
 <div class="entry">
     <div class="entry-title"><a href="pdf/district_heating_control.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a></div>
-    <div class="entry-detail"><span class="authors">C. Zotică, D. Pérez-Piñeiro, S. Skogestad</span></div>
-    <div class="entry-detail"><em>Computers &amp; Chemical Engineering</em>, 2021</div>
+    <div class="entry-detail"><span class="authors">C.&nbsp;Zotică, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad</span>. <em>Computers &amp; Chemical Engineering</em>, 2021</div>
 </div>
 
 <div class="entry">
     <div class="entry-title"><a href="pdf/thermal_storage_control.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a></div>
-    <div class="entry-detail"><span class="authors">C. Zotică, D. Pérez-Piñeiro, S. Skogestad</span></div>
-    <div class="entry-detail"><em>ESCAPE</em>, 2020</div>
+    <div class="entry-detail"><span class="authors">C.&nbsp;Zotică, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad</span>. <em>ESCAPE</em>, 2020</div>
 </div>
 
 <div class="entry">
     <div class="entry-title"><a href="pdf/pharma_self_optimizing.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a></div>
-    <div class="entry-detail"><span class="authors">D. Pérez-Piñeiro, A. Nikolakopoulou, J. Jäschke, R. D. Braatz</span></div>
-    <div class="entry-detail"><em>IFAC World Congress</em>, 2020</div>
+    <div class="entry-detail"><span class="authors">D.&nbsp;Pérez-Piñeiro, A.&nbsp;Nikolakopoulou, J.&nbsp;Jäschke, R.&nbsp;D.&nbsp;Braatz</span>. <em>IFAC World Congress</em>, 2020</div>
 </div>
 
-<hr class="section-rule">
-<h2>Software</h2>
-
-<div class="entry">
-    <div class="entry-title"><a href="https://github.com/cvxgrp/cvqp">CVQP</a></div>
-    <div class="entry-detail">
-        A fast and scalable solver for CVaR-constrained quadratic programs.
-    </div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="https://github.com/oripress/AlgoTune">AlgoTune</a></div>
-    <div class="entry-detail">
-        Contributor (CVXPY examples). A benchmark for speeding up numerical algorithms with language models.
-    </div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="https://github.com/cvxpy/cvxpy">CVXPY</a></div>
-    <div class="entry-detail">
-        Contributor (CVaR atom). A Python-embedded modeling language for convex optimization.
-    </div>
-</div>
-
-<hr class="section-rule">
 <h2>Teaching</h2>
 
 <div class="entry">
-    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">TKP4140 - Process Control</a></div>
-    <div class="entry-detail">Teaching assistant, NTNU. Fall 2019, 2020, 2021.</div>
+    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">Process Control (TKP4140)</a></div>
+    <div class="entry-detail">Teaching assistant, NTNU, Fall 2019, 2020, 2021</div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">TEP4135 - Fluid Mechanics 2</a></div>
-    <div class="entry-detail">Teaching assistant, NTNU. Fall 2018.</div>
+    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">Fluid Mechanics 2 (TEP4135)</a></div>
+    <div class="entry-detail">Teaching assistant, NTNU, Fall 2018</div>
 </div>
 
-<hr class="section-rule">
 <h2>Press</h2>
 
 <div class="entry">
-    <div class="entry-title"><a href="pdf/2024-04-14_faro_de_vigo.pdf">Gallegos a la Vanguardia: de Lugo a Silicon Valley</a></div>
-    <div class="entry-detail"><em>Faro de Vigo</em>, 2024</div>
+    <div class="entry-title"><a href="pdf/2024-04-14_faro_de_vigo.pdf">Interview on my summer internship at Gridmatic and startup culture in Silicon Valley</a></div>
+    <div class="entry-detail"><em>Faro de Vigo</em>, “Gallegos a la vanguardia” (Galicians at the forefront), 2024</div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="pdf/2023-07-10_la_voz_de_galicia.pdf">Stanford, algoritmos y un garaje lleno de robots</a></div>
-    <div class="entry-detail"><em>La Voz de Galicia</em>, 2023</div>
+    <div class="entry-title"><a href="pdf/2023-07-10_la_voz_de_galicia.pdf">Interview on my PhD research visit to Stanford</a></div>
+    <div class="entry-detail"><em>La Voz de Galicia</em> (Lugo edition), 2023</div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="pdf/2019-05-26_la_voz_de_galicia.pdf">Un semestre en el MIT: plantas farmacéuticas que se operan solas</a></div>
-    <div class="entry-detail"><em>La Voz de Galicia</em>, 2019</div>
+    <div class="entry-title"><a href="pdf/2019-05-26_la_voz_de_galicia.pdf">Interview on my master’s thesis research at MIT</a></div>
+    <div class="entry-detail"><em>La Voz de Galicia</em> (Lugo edition), 2019</div>
 </div>
 
 <div class="entry">
-    <div class="entry-title"><a href="pdf/2017-05-21_la_voz_de_galicia.pdf">Una beca "la Caixa" para estudiar un máster en Noruega</a></div>
-    <div class="entry-detail"><em>La Voz de Galicia</em>, 2017</div>
+    <div class="entry-title"><a href="pdf/2017-05-21_la_voz_de_galicia.pdf">Interview on receiving a “la Caixa” fellowship for my master’s in Norway</a></div>
+    <div class="entry-detail"><em>La Voz de Galicia</em> (Lugo edition), 2017</div>
 </div>
 
-<div class="footer">© David Pérez Piñeiro</div>
-
-<button class="theme-toggle" aria-label="Toggle dark mode">
-    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    <svg class="icon-sun" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-<script>
-    const toggle = document.querySelector('.theme-toggle');
-    const moonIcon = toggle.querySelector('.icon-moon');
-    const sunIcon = toggle.querySelector('.icon-sun');
-    function updateToggleIcon() {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        moonIcon.style.display = isDark ? 'none' : 'block';
-        sunIcon.style.display = isDark ? 'block' : 'none';
-    }
-    updateToggleIcon();
-    document.querySelectorAll('.et-al').forEach(function(el) {
-        el.addEventListener('click', function() {
-            this.closest('.authors').classList.toggle('expanded');
-        });
-    });
-    toggle.addEventListener('click', function() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateToggleIcon();
-    });
-</script>
 </body>
 </html>
