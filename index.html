@@ -14,14 +14,17 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:ital,wght@0,300..600;1,300..600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #1b1c1e;
-            --ink-soft: #4a4d52;
-            --ink-faint: #7c8188;
-            --rule: #e3e5e8;
-            --accent: #2f5db3;
+            color-scheme: light dark;
+            --bg: light-dark(#ffffff, #161917);
+            --text: light-dark(#18202e, #e8ebe9);
+            --muted: light-dark(#5d6878, #a3aaa6);
+            --rule: light-dark(#e8e8e8, #2c312e);
+            --accent: light-dark(#237a95, #82d3ef);
+            --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+            --serif: "Spectral", Charter, "Iowan Old Style", Georgia, serif;
         }
 
         * {
@@ -29,221 +32,334 @@
         }
 
         body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 18px;
+            font-weight: 350;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 42rem;
             margin: 0 auto;
-            max-width: calc(44rem + 3rem);
-            padding: 3.5rem 1.5rem 4rem;
-            background: #fff;
-            color: var(--ink);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            font-size: 17px;
-            line-height: 1.65;
+            padding: 0 1.5rem;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.4rem;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            color: var(--muted);
+            transition: color 0.15s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        main.container {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
         }
 
         h1, h2 {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 600;
-            color: var(--ink);
+            font-family: var(--serif);
+            font-weight: 400;
+            letter-spacing: -0.015em;
+            line-height: 1.15;
         }
 
         h1 {
-            font-size: 2rem;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin: 0 0 1.75rem;
+            font-size: 2.45rem;
+            margin: 0;
         }
 
         h2 {
-            font-size: 1.3rem;
-            letter-spacing: -0.01em;
-            line-height: 1.25;
-            margin: 3rem 0 1.1rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 1px solid var(--rule);
+            font-size: 1.55rem;
+            margin: 3.5rem 0 1rem;
         }
 
         a {
             color: var(--accent);
             text-decoration: none;
-            border-bottom: 1px solid color-mix(in srgb, currentColor 30%, transparent);
-            transition: border-color 0.15s ease, color 0.15s ease;
         }
 
         a:hover {
-            color: var(--ink);
-            border-bottom-color: currentColor;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
         }
 
         p {
-            margin: 0 0 1.1rem;
+            margin: 0 0 1rem;
+            text-wrap: pretty;
         }
 
         .intro {
             display: flex;
-            gap: 1.75rem;
+            gap: 2rem;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
         }
 
         .intro img {
-            width: 170px;
-            height: auto;
+            width: 150px;
             border-radius: 6px;
-            display: block;
             flex-shrink: 0;
+            margin-top: 0.4rem;
         }
 
-        .contact {
-            color: var(--ink-soft);
-            line-height: 1.9;
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem 1.25rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
         }
 
-        .contact a[href^="mailto:"] {
-            color: inherit;
+        .listing {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
         }
 
-        .entry {
-            margin-bottom: 1rem;
+        .listing li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1.5rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--rule);
         }
 
-        .entry-title {
-            line-height: 1.45;
-            margin-bottom: 0.1rem;
+        .listing li:first-child {
+            border-top: 1px solid var(--rule);
         }
 
-        .entry-detail {
-            font-size: 0.93rem;
-            color: var(--ink-faint);
+        .listing .title {
+            color: var(--text);
+            font-weight: 450;
         }
 
-        @media (max-width: 700px) {
+        .listing a.title:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .meta {
+            display: block;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 0.15rem;
+        }
+
+        .meta a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-decoration-color: var(--rule);
+            text-underline-offset: 3px;
+        }
+
+        .meta a:hover {
+            color: var(--accent);
+            text-decoration-color: currentColor;
+        }
+
+        time {
+            color: var(--muted);
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        @media (max-width: 600px) {
             body {
-                font-size: 16px;
-                padding: 2.25rem 1.25rem 3rem;
+                font-size: 17px;
+            }
+
+            main.container {
+                padding-top: 1.5rem;
             }
 
             h1 {
-                font-size: 1.65rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-                margin-top: 2.25rem;
+                font-size: 2rem;
             }
 
             .intro {
-                flex-direction: column;
-                gap: 1rem;
+                flex-direction: column-reverse;
+                gap: 1.25rem;
             }
 
             .intro img {
-                width: 150px;
+                width: 120px;
+                margin: 0;
+            }
+
+            .top {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-<h1>David Pérez Piñeiro</h1>
+<main class="container">
+
+<div class="top">
+    <h1>David Pérez Piñeiro</h1>
+    <nav>
+        <a href="#papers">Papers</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#press">Press</a>
+    </nav>
+</div>
 
 <div class="intro">
-    <img src="photo.jpeg" alt="David Pérez Piñeiro">
-    <div class="contact">
-        <a href="mailto:davidppineiro@gmail.com">davidppineiro@gmail.com</a><br>
-        <a href="https://github.com/davidppineiro">GitHub</a> /
-        <a href="https://scholar.google.com/citations?user=iI8Ju8IAAAAJ">Scholar</a> /
-        <a href="https://www.linkedin.com/in/davidppineiro">LinkedIn</a>
+    <div>
+        <p>
+            I am a research scientist at <a href="https://www.gridmatic.com/">Gridmatic</a>,
+            where I build optimization models and algorithms for quantitative energy trading.
+        </p>
+        <p>
+            I am interested in optimization and its applications
+            to control, energy, and finance. I am completing my PhD at NTNU, advised by
+            <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>,
+            and have been a visiting researcher with
+            <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a>
+            at MIT and
+            <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>
+            at Stanford.
+        </p>
+        <p>
+            I received a BSc in Energy Engineering from the University of Vigo
+            and an MSc in Sustainable Energy from NTNU,
+            supported by a “la Caixa” Foundation postgraduate fellowship.
+        </p>
+        <div class="links">
+            <a href="mailto:davidppineiro@gmail.com">Email</a>
+            <a href="https://github.com/davidppineiro">GitHub</a>
+            <a href="https://scholar.google.com/citations?user=iI8Ju8IAAAAJ">Scholar</a>
+            <a href="https://www.linkedin.com/in/davidppineiro">LinkedIn</a>
+        </div>
     </div>
+    <img src="photo.jpeg" alt="David Pérez Piñeiro">
 </div>
 
-<h2>About me</h2>
+<h2 id="papers">Papers</h2>
 
-<div class="bio">
-    <p>
-        I am a research scientist at <a href="https://www.gridmatic.com/">Gridmatic</a>,
-        where I build optimization models and algorithms for quantitative energy trading.
-    </p>
-    <p>
-        I am interested in optimization and its applications
-        to control, energy, and finance. I am completing my PhD at NTNU, advised by
-        <a href="https://folk.ntnu.no/skoge/">Sigurd Skogestad</a>,
-        and have been a visiting researcher with
-        <a href="https://web.mit.edu/braatzgroup/index.html">Richard Braatz</a>
-        at MIT and
-        <a href="https://web.stanford.edu/~boyd/">Stephen Boyd</a>
-        at Stanford.
-    </p>
-    <p>
-        I received a BSc in Energy Engineering from the University of Vigo
-        and an MSc in Sustainable Energy from NTNU,
-        supported by a “la Caixa” Foundation postgraduate fellowship.
-    </p>
-</div>
+<ul class="listing">
+    <li>
+        <span>
+            <a class="title" href="pdf/cvqp.pdf">An operator splitting method for large-scale CVaR-constrained quadratic programs</a>
+            <span class="meta">E.&nbsp;Luxenberg, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Diamond, S.&nbsp;Boyd. <em>Optimization and Engineering</em>. <a href="https://github.com/cvxgrp/cvqp">Code</a></span>
+        </span>
+        <time>2026</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/home_battery_dispatch.pdf">Home battery dispatch under a tiered peak power tariff</a>
+            <span class="meta">D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad, S.&nbsp;Boyd. <em>Optimization and Engineering</em>. <a href="https://github.com/cvxgrp/home-energy-management">Code</a></span>
+        </span>
+        <time>2026</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a>
+            <span class="meta">O.&nbsp;Press, B.&nbsp;Amos, H.&nbsp;Zhao, Y.&nbsp;Wu, S.&nbsp;Ainsworth, D.&nbsp;Krupke, P.&nbsp;Kidger, T.&nbsp;Sajed, B.&nbsp;Stellato, J.&nbsp;Park, N.&nbsp;Bosch, E.&nbsp;Meril, A.&nbsp;Steppi, A.&nbsp;Zharmagambetov, F.&nbsp;Zhang, D.&nbsp;Pérez-Piñeiro, A.&nbsp;Mercurio, N.&nbsp;Zhan, T.&nbsp;Abramovich, K.&nbsp;Lieret, H.&nbsp;Zhang, S.&nbsp;Huang, M.&nbsp;Bethge, O.&nbsp;Press. <em>NeurIPS</em>. <a href="https://github.com/oripress/AlgoTune">Code</a>, <a href="https://algotune.io/">website</a></span>
+        </span>
+        <time>2025</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/district_heating_control.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a>
+            <span class="meta">C.&nbsp;Zotică, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad. <em>Computers &amp; Chemical Engineering</em></span>
+        </span>
+        <time>2021</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/thermal_storage_control.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a>
+            <span class="meta">C.&nbsp;Zotică, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad. <em>ESCAPE</em></span>
+        </span>
+        <time>2020</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/pharma_self_optimizing.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a>
+            <span class="meta">D.&nbsp;Pérez-Piñeiro, A.&nbsp;Nikolakopoulou, J.&nbsp;Jäschke, R.&nbsp;D.&nbsp;Braatz. <em>IFAC World Congress</em></span>
+        </span>
+        <time>2020</time>
+    </li>
+</ul>
 
-<h2>Papers</h2>
+<h2 id="teaching">Teaching</h2>
 
-<div class="entry">
-    <div class="entry-title"><a href="pdf/cvqp.pdf">An operator splitting method for large-scale CVaR-constrained quadratic programs</a> <span class="entry-links">(<a href="https://github.com/cvxgrp/cvqp">code</a>)</span></div>
-    <div class="entry-detail"><span class="authors">E.&nbsp;Luxenberg, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Diamond, S.&nbsp;Boyd</span>. <em>Optimization and Engineering</em>, 2026</div>
-</div>
+<ul class="listing">
+    <li>
+        <span>
+            <a class="title" href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">Process Control (TKP4140)</a>
+            <span class="meta">Teaching assistant, NTNU</span>
+        </span>
+        <time>2019–21</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">Fluid Mechanics 2 (TEP4135)</a>
+            <span class="meta">Teaching assistant, NTNU</span>
+        </span>
+        <time>2018</time>
+    </li>
+</ul>
 
-<div class="entry">
-    <div class="entry-title"><a href="pdf/home_battery_dispatch.pdf">Home battery dispatch under a tiered peak power tariff</a> <span class="entry-links">(<a href="https://github.com/cvxgrp/home-energy-management">code</a>)</span></div>
-    <div class="entry-detail"><span class="authors">D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad, S.&nbsp;Boyd</span>. <em>Optimization and Engineering</em>, 2026</div>
-</div>
+<h2 id="press">Press</h2>
 
-<div class="entry">
-    <div class="entry-title"><a href="https://arxiv.org/pdf/2507.15887">Can language models speed up general-purpose numerical programs?</a> <span class="entry-links">(<a href="https://github.com/oripress/AlgoTune">code</a>, <a href="https://algotune.io/">website</a>)</span></div>
-    <div class="entry-detail"><span class="authors">O.&nbsp;Press, B.&nbsp;Amos, H.&nbsp;Zhao, Y.&nbsp;Wu, S.&nbsp;Ainsworth, D.&nbsp;Krupke, P.&nbsp;Kidger, T.&nbsp;Sajed, B.&nbsp;Stellato, J.&nbsp;Park, N.&nbsp;Bosch, E.&nbsp;Meril, A.&nbsp;Steppi, A.&nbsp;Zharmagambetov, F.&nbsp;Zhang, D.&nbsp;Pérez-Piñeiro, A.&nbsp;Mercurio, N.&nbsp;Zhan, T.&nbsp;Abramovich, K.&nbsp;Lieret, H.&nbsp;Zhang, S.&nbsp;Huang, M.&nbsp;Bethge, O.&nbsp;Press</span>. <em>NeurIPS</em>, 2025</div>
-</div>
+<ul class="listing">
+    <li>
+        <span>
+            <a class="title" href="pdf/2024-04-14_faro_de_vigo.pdf">Interview on my summer internship at Gridmatic and startup culture in Silicon Valley</a>
+            <span class="meta"><em>Faro de Vigo</em>, “Gallegos a la vanguardia” (Galicians at the forefront)</span>
+        </span>
+        <time>2024</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/2023-07-10_la_voz_de_galicia.pdf">Interview on my PhD research visit to Stanford</a>
+            <span class="meta"><em>La Voz de Galicia</em> (Lugo edition)</span>
+        </span>
+        <time>2023</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/2019-05-26_la_voz_de_galicia.pdf">Interview on my master’s thesis research at MIT</a>
+            <span class="meta"><em>La Voz de Galicia</em> (Lugo edition)</span>
+        </span>
+        <time>2019</time>
+    </li>
+    <li>
+        <span>
+            <a class="title" href="pdf/2017-05-21_la_voz_de_galicia.pdf">Interview on receiving a “la Caixa” fellowship for my master’s in Norway</a>
+            <span class="meta"><em>La Voz de Galicia</em> (Lugo edition)</span>
+        </span>
+        <time>2017</time>
+    </li>
+</ul>
 
-<div class="entry">
-    <div class="entry-title"><a href="pdf/district_heating_control.pdf">Supervisory control design for balancing supply and demand in a district heating system with thermal energy storage</a></div>
-    <div class="entry-detail"><span class="authors">C.&nbsp;Zotică, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad</span>. <em>Computers &amp; Chemical Engineering</em>, 2021</div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="pdf/thermal_storage_control.pdf">Optimal operation and control of a thermal energy storage system: classical advanced control versus model predictive control</a></div>
-    <div class="entry-detail"><span class="authors">C.&nbsp;Zotică, D.&nbsp;Pérez-Piñeiro, S.&nbsp;Skogestad</span>. <em>ESCAPE</em>, 2020</div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="pdf/pharma_self_optimizing.pdf">Self-optimizing control of a continuous-flow pharmaceutical manufacturing plant</a></div>
-    <div class="entry-detail"><span class="authors">D.&nbsp;Pérez-Piñeiro, A.&nbsp;Nikolakopoulou, J.&nbsp;Jäschke, R.&nbsp;D.&nbsp;Braatz</span>. <em>IFAC World Congress</em>, 2020</div>
-</div>
-
-<h2>Teaching</h2>
-
-<div class="entry">
-    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TKP4140#tab=omEmnet">Process Control (TKP4140)</a></div>
-    <div class="entry-detail">Teaching assistant, NTNU, Fall 2019, 2020, 2021</div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="https://www.ntnu.edu/studies/courses/TEP4135#tab=omEmnet">Fluid Mechanics 2 (TEP4135)</a></div>
-    <div class="entry-detail">Teaching assistant, NTNU, Fall 2018</div>
-</div>
-
-<h2>Press</h2>
-
-<div class="entry">
-    <div class="entry-title"><a href="pdf/2024-04-14_faro_de_vigo.pdf">Interview on my summer internship at Gridmatic and startup culture in Silicon Valley</a></div>
-    <div class="entry-detail"><em>Faro de Vigo</em>, “Gallegos a la vanguardia” (Galicians at the forefront), 2024</div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="pdf/2023-07-10_la_voz_de_galicia.pdf">Interview on my PhD research visit to Stanford</a></div>
-    <div class="entry-detail"><em>La Voz de Galicia</em> (Lugo edition), 2023</div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="pdf/2019-05-26_la_voz_de_galicia.pdf">Interview on my master’s thesis research at MIT</a></div>
-    <div class="entry-detail"><em>La Voz de Galicia</em> (Lugo edition), 2019</div>
-</div>
-
-<div class="entry">
-    <div class="entry-title"><a href="pdf/2017-05-21_la_voz_de_galicia.pdf">Interview on receiving a “la Caixa” fellowship for my master’s in Norway</a></div>
-    <div class="entry-detail"><em>La Voz de Galicia</em> (Lugo edition), 2017</div>
-</div>
+</main>
 
 </body>
 </html>
